@@ -10,11 +10,11 @@ httpclient:
   httpConnectTimeout: 3000
   httpSocketTimeout: 5000
   httpMaxPoolSize: 20
-  httpMonitorInterval: 300000
+  httpMonitorInterval: 3000
   httpIdelTimeout: 5
 eureka:
   client:
     register-with-eureka: false
-    fetch-registry: false #当自己不是client的时候
+    fetch-registry: false
     service-url:
       defaultZone: http://localhost:8796/eureka/
