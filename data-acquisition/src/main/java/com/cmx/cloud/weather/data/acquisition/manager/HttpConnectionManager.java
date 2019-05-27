@@ -129,6 +129,29 @@ public class HttpConnectionManager {
     }
 
 
+    public byte[] doGetFile(String url) throws Exception {
+
+        CloseableHttpClient httpClient = getCloseClient();
+        // 创建http GET请求
+        HttpGet httpGet = new HttpGet(url);
+
+        CloseableHttpResponse response = null;
+        try {
+            // 执行请求
+            response = httpClient.execute(httpGet);
+            // 判断返回状态是否为200
+            if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                return EntityUtils.toByteArray(response.getEntity());
+            }
+        } finally {
+            if (response != null) {
+                response.close();
+            }
+        }
+        return null;
+    }
+
+
     private CloseableHttpClient getCloseClient(){
         return HttpClients.custom()
                 .setConnectionManager(manager).setDefaultRequestConfig(requestConfig).build();

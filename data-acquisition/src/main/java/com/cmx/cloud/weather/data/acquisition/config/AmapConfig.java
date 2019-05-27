@@ -23,5 +23,10 @@ public class AmapConfig {
      */
     private String cityCodeDownUrl;
 
+    /**
+     * 天气api
+     */
+    private String weatherApi;
+
 
 }

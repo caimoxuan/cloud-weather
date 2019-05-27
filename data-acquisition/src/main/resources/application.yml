@@ -4,8 +4,9 @@ spring:
 server:
   port: 8796
 amap:
-  key: 3ae033be310330b30d55d0c189340334
+  key: 567a4a9a752dedaaca280bafb343338b
   cityCodeDownUrl: https://a.amap.com/lbs/static/file/AMap_adcode_citycode.xlsx.zip
+  weatherApi: https://restapi.amap.com/v3/weather/weatherInfo
 httpclient:
   httpConnectTimeout: 3000
   httpSocketTimeout: 5000
