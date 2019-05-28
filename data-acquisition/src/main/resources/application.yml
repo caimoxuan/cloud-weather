@@ -1,6 +1,12 @@
 spring:
   application:
     name: weather-data-acqusition
+  data:
+     elasticsearch:
+        cluster-nodes: 127.0.0.1:9300
+        repositories:
+          enabled: true
+        cluster-name: elasticsearch
 server:
   port: 8796
 amap:

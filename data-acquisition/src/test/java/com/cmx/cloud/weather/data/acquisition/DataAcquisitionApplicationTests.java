@@ -20,12 +20,12 @@ public class DataAcquisitionApplicationTests {
 
 	@Test
 	public void contextLoads() {
-//		try {
-//			cityCodeParseService.getCityCode();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-		System.out.println(weatherInfoService.getWeather());
+		try {
+			cityCodeParseService.getCityCode();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+//		System.out.println(weatherInfoService.getWeather());
 	}
 
 }

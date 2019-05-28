@@ -19,13 +19,17 @@ public class ExcelListener extends AnalysisEventListener<CityCode> {
         this.cityCodes = cityCodes;
     }
 
-    //解析一行调用一次
+    /**
+     *  解析一行调用一次
+     */
     @Override
     public void invoke(CityCode cityCode, AnalysisContext analysisContext) {
         cityCodes.add(cityCode);
     }
 
-    //结束解析调用
+    /**
+     *  结束解析调用
+     */
     @Override
     public void doAfterAllAnalysed(AnalysisContext analysisContext) {
     }

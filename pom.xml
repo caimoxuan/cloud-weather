@@ -24,6 +24,7 @@
 		<httpclient.version>4.5.6</httpclient.version>
 		<gson.version>2.6.1</gson.version>
 		<easyexcel.version>1.1.1</easyexcel.version>
+		<pinyin.version>2.5.0</pinyin.version>
 	</properties>
 
 	<dependencies>
@@ -66,6 +67,12 @@
 				<version>${easyexcel.version}</version>
 			</dependency>
 
+			<!-- 拼音转换 -->
+			<dependency>
+				<groupId>com.belerweb</groupId>
+				<artifactId>pinyin4j</artifactId>
+				<version>${pinyin.version}</version>
+			</dependency>
 
 		</dependencies>
 
