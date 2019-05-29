@@ -1,0 +1,12 @@
+spring:
+  application:
+    name:  weather-name-server
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8887/eureka/
+server:
+  port: 8887
+

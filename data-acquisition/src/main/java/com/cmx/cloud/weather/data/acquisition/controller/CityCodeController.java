@@ -25,8 +25,10 @@ public class CityCodeController {
 
 
     @RequestMapping( value = "/code/list", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public List<CityCodeDocument> cityCode(@RequestParam String cityName){
-        return cityCodeService.matchCity(cityName);
+    public List<CityCodeDocument> cityCode(@RequestParam String cityName,
+                                            int startPage,
+                                            int pageSize){
+        return cityCodeService.matchCity(cityName, startPage, pageSize);
     }
 
 

@@ -6,6 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,15 +35,18 @@ public class CityCodeService {
      * @param matchCode
      * @return
      */
-    public List<CityCodeDocument> matchCity(String matchCode){
+    public List<CityCodeDocument> matchCity(String matchCode, int startPage, int size){
         QueryBuilder queryBuilder = QueryBuilders.boolQuery().
                 should(QueryBuilders.matchQuery("cityName", matchCode)).
                 should(QueryBuilders.matchQuery("spellName", matchCode));
-        Iterable<CityCodeDocument> cityCodeDocuments = cityCodeRepository.search(queryBuilder);
+
+        Pageable pageable = PageRequest.of(startPage, size == 0 ? 10 : size);
+
+        Page<CityCodeDocument> search = cityCodeRepository.search(queryBuilder, pageable);
 
         List<CityCodeDocument> documentList = new ArrayList<>();
 
-        cityCodeDocuments.forEach(documentList::add);
+        search.forEach(documentList::add);
 
         return documentList;
     }

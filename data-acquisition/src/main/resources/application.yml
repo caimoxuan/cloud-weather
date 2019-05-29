@@ -21,7 +21,5 @@ httpclient:
   httpIdelTimeout: 5
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8796/eureka/
+      defaultZone: http://localhost:8887/eureka/

@@ -19,9 +19,8 @@ public class WeatherInfoService {
     @Autowired
     private HttpConnectionManager httpConnectionManager;
 
-    public String getWeather(){
-        String url = amapConfig.getWeatherApi() + "?city=110101&key="+amapConfig.getKey();
-        System.out.println(url);
+    public String getWeather(String cityCode){
+        String url = amapConfig.getWeatherApi() + "?city=" + cityCode +"&key="+amapConfig.getKey();
         try {
             return httpConnectionManager.doGet(url);
         } catch (Exception e) {
